@@ -55,25 +55,21 @@ const Sidebar = () => {
 
           {extended ? (
             <>
-              <div className="recent">
+              <div className="recent ">
                 <p className="recent-title">Recent</p>
                 {prevPrompt.map((item, idx) => {
                   return (
                     <div
                       onClick={() => loadPrompt(item)}
-                      className="recent-entry"
+                      className={`recent-entry transition-all duration-300 ease-in-out cursor-pointer flex justify-center items-center w-full  ${
+                        them ? "hover:bg-[#cacbcb]" : "hover:bg-[#365991]"
+                      }`}
                       key={idx}
                       style={{
                         color: them ? "black" : "white",
                       }}
                     >
-                      <img
-                        className={`${
-                          them ? "outline-black" : "outline-[#ccc]"
-                        }`}
-                        src={assets.message_icon}
-                        alt=""
-                      />
+                      <i className="ri-chat-2-line text-[1.3rem]"></i>
                       <p>{item.slice(0, 18)}...</p>
                     </div>
                   );
@@ -85,7 +81,9 @@ const Sidebar = () => {
 
         <div className="bottom relative ">
           <div
-            className="bottom-item recent-entry"
+            className={`bottom-item recent-entry  ${
+              them ? "hover:hover:bg-[#cacbcb]" : "hover:bg-[#365991]"
+            }`}
             style={{
               color: them ? "black" : "white",
             }}
@@ -96,7 +94,9 @@ const Sidebar = () => {
           </div>
 
           <div
-            className="bottom-item recent-entry"
+            className={`bottom-item recent-entry ${
+              them ? "hover:hover:bg-[#cacbcb]" : "hover:bg-[#365991]"
+            } `}
             style={{
               color: them ? "black" : "white",
             }}
@@ -106,7 +106,9 @@ const Sidebar = () => {
           </div>
 
           <div
-            className="bottom-item recent-entry  "
+            className={`bottom-item recent-entry ${
+              them ? "hover:hover:bg-[#cacbcb]" : "hover:bg-[#365991]"
+            } `}
             onClick={handleSettingClick}
             style={{
               color: them ? "black" : "white",
